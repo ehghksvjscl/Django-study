@@ -17,6 +17,9 @@
             {% for post in post_list %}
                 <tr>
                     <td>
+                        {{ post.pk }}  
+                    </td>
+                    <td>
                         {{ post.message }}  
                     </td>
                     <td>
@@ -30,5 +33,7 @@
             {% endfor %}
         </tbody>
     </table>
+    {{ is_paginated }}
+    {{ page_obj }}
 </body>
 </html>

@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from .models import Post
 from django.http import HttpRequest, HttpResponse, Http404
 
-post_list = ListView.as_view(model=Post)
+post_list = ListView.as_view(model=Post,paginate_by=10)
  
 # def post_list(request):
 #    qs = Post.objects.all()
