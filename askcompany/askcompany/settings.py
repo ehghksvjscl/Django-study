@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # settings
+    'bootstrap4',
     'django_extensions',
     'debug_toolbar',
     # app
