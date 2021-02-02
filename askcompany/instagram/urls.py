@@ -21,5 +21,7 @@ urlpatterns = [
     path('<int:pk>/',views.post_detail),
     # path('archives/<int:year>/',views.archives_year),
     # path(r'archives/(?P<year>20\d{2})/',views.archives_year), # 쿼리 파람값을 20~~ 로 받기
-    path('archives/<year:year>/',views.archives_year), # Converter 정의
+    # path('archives/<year:year>/',views.archives_year), # Converter 정의
+    path('archive/',views.post_archive, name='post_archive'),
+    path('archive/<year:year>',views.post_archive_year, name='post_archive_year'),
 ]
