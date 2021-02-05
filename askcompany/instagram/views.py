@@ -4,7 +4,12 @@ from django.utils.decorators import method_decorator
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, ArchiveIndexView, YearArchiveView
 from .models import Post
+from .forms import PostForm
 from django.http import HttpRequest, HttpResponse, Http404
+
+def post_new(request):
+    form = PostForm()
+    return render(request,'instagram/post_form.html',{'form':form})
 
 # post_list = login_required(ListView.as_view(model=Post,paginate_by=10))
 
@@ -44,3 +49,4 @@ post_detail = DetailView.as_view(model=Post)
 post_archive = ArchiveIndexView.as_view(model=Post, date_field='created_at',paginate_by=10)
 
 post_archive_year = YearArchiveView.as_view(model=Post, date_field='created_at',make_object_list=True)
+
