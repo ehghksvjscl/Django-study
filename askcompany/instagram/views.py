@@ -29,8 +29,7 @@ def post_edit(request,pk):
     if post.author != request.user:
         messages.error(request,'작성자만 저장 할 수 있습니다.')
         redirect(post)
-    else:
-        messages.success(request,'수정 성공') 
+
 
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES, instance=post)
@@ -45,22 +44,22 @@ def post_edit(request,pk):
 # post_list = login_required(ListView.as_view(model=Post,paginate_by=10))
 
 # @method_decorator(login_required,name='dispatch')
-class PostListView(LoginRequiredMixin,ListView):
-    model=Post
-    paginate_by=10
+# class PostListView(LoginRequiredMixin,ListView):
+#     model=Post
+#     paginate_by=10
 
-post_list = PostListView.as_view()
+# post_list = PostListView.as_view()
 
-# @login_required
-# def post_list(request):
-#    qs = Post.objects.all()
-#    q = request.GET.get('q','')
-#    print("asdasdasdasd")
+@login_required
+def post_list(request):
+    qs = Post.objects.all()
+    q = request.GET.get('q','')
+    messages.info(request,'메시지 테스트') # 선언 하는 부분일 분 소비하는 부분이 있어야함
 
-   # instagram/templates/instagram/post_list.html
-#    if q:
-#        qs = qs.filter(message__icontains=q)
-#    return render(request, 'instagram/post_list.html',{'post_list' : qs})
+    if q:
+        qs = qs.filter(message__icontains=q)
+        print(qs)
+    return render(request, 'instagram/post_list.html',{'post_list' : qs})
 
 # def post_detail(request: HttpRequest, pk: int) -> HttpResponse:
     # post = get_object_or_404(Post,pk=pk)
