@@ -38,3 +38,8 @@ def profile_edit(request):
 
 # profile_edit = ProfileUpdateView.as_view()
 
+def signup(request):
+    pass
+
+def logout(request):
+    pass
