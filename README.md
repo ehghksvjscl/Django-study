@@ -4,16 +4,13 @@
 
 **로그인** : 아이디/암호를 통한 로그인, 회원 가입과 동시에 로그인, 로그아웃, 프로필 수정 및 암호 수정
 
-            포스팅 쓰기 구현 (사진 및 caption, 다수 태그, location 등록)
+포스팅 쓰기 구현 (사진 및 caption, 다수 태그, location 등록)
 
 **유저 페이지 구현**
 
 **타임라인** Follow 구현, Following 하는 유저들의 포스팅 목록, 포스팅 좋아요, 포스팅 댓글
 
-Front Skill
-
-
-# web front using skill
+# Web front using skill  
 
 **HTTP/CSS/JavaScript** 
 
@@ -21,12 +18,18 @@ Front Skill
 
 **Bootstrapt4** : CSS Frameworks
 
-# Web Backend using skill
+# Web backend using skill  
 
 **Django** : EndPoint 구현을 하기 위해 사용할 예정
 
-# How to run 
+# What is using packages  
 
+ - 
+
+ - 
+
+# How to run  
+  
 ```
 # 가상환경 세팅
 	conda create --name=django-with-react-rev2 python=3.8
