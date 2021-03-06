@@ -43,9 +43,6 @@
   # window
     where python | where pip
 
-# Django 설치
-pip install django~=3.0.0
-
-# Project 생성
-django-admin startproject askcompany .
+# 패키지 설치
+  pip install -r requirements.txt
 ```
