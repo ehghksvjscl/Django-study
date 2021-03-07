@@ -11,6 +11,14 @@
 <title>Instagram with Ucoding</title>
 </head>
 <body>
+    <!-- django Message defiition-->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alter alter-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
     <!-- Get bootstrap html and css 
         url : https://getbootstrap.com/docs/5.0/examples/pricing/
     -->
