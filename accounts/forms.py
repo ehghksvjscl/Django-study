@@ -7,7 +7,7 @@ class SignupForm(UserCreationForm):
     # UserCreationForm에서 email field가 필수 값 변경 및 확인
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        print(self.fields['email'].required)
+        # print(self.fields['email'].required)
         self.fields['email'].required = True
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True

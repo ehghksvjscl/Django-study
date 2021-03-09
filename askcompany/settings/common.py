@@ -140,3 +140,14 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 INTERNAL_IPS = ['127.0.0.1',]
+
+# Email with Send Grid
+# ref = https://sendgrid.com/docs/for-developers/sending-email/django/
+# ref = https://docs.djangoproject.com/en/3.1/topics/email/
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

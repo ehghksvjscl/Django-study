@@ -20,13 +20,12 @@
 
 # Web backend using skill  
 
-**Django** : EndPoint 구현을 하기 위해 사용할 예정
+**Django** : EndPoint 구현
 
 # What is using packages  
 
- - 
-
- - 
+ - django-debug-toolbar
+ - bootstrap4
 
 # How to run  
   
