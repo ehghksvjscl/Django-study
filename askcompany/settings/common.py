@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ADMIN = [
+    ('Uno','unoCoding@unocomapny.com'),
+]
+
 
 # Application definition
 
@@ -141,13 +145,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 INTERNAL_IPS = ['127.0.0.1',]
 
-# Email with Send Grid
-# ref = https://sendgrid.com/docs/for-developers/sending-email/django/
-# ref = https://docs.djangoproject.com/en/3.1/topics/email/
-SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
+LOGIN_URL = 'accounts/login'
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+# Email with Send Grid
+# ref = https://velog.io/@snowman39/Django-%EC%97%90%EC%84%9C-%EC%9D%B4%EB%A9%94%EC%9D%BC-%EB%B3%B4%EB%82%B4%EA%B8%B0-SMT-Gmail-API
+
+from decouple import config
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = config("GOOGLE_EMAIL_ID")
+EMAIL_HOST_PASSWORD = config("GOOGLE_EMAIL_PW")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+WELCOME_EMAIL_SENDER = 'unocoding@unocomanpy.com'
