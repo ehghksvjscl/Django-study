@@ -45,7 +45,7 @@
                         </a> 
                         <a class "p-2 text-dark text-decoration-none">
                             {% if user %}
-                                {{ user }} Profile
+                                <img src="{% url 'pydenticon_image' data=user.username%}" style="width: 24px; height: 24px;" />
                             {% else %}
                                 Profile
                             {% endif %}
