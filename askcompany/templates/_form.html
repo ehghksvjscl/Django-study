@@ -13,15 +13,21 @@
     </div>
   {% endif %}
   <div class="card-body">
-    <form action='' method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {% bootstrap_form form field_class="mb-3" label_class="mb-2" %}
-        {% buttons %}
-            <button type="submit" class="btn btn-primary mb-5">
-                {{ submit_label|default:"submit" }}
-            </button>
-        {% endbuttons %}
-    </form>
+    {% if form %}
+      <form action='' method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% bootstrap_form form field_class="mb-3" label_class="mb-2" %}
+          {% buttons %}
+              <button type="submit" class="btn btn-primary mb-5">
+                  {{ submit_label|default:"submit" }}
+              </button>
+          {% endbuttons %}
+      </form>
+    {% else %}
+      <div class="alert alert-danger">
+        form 객체를 지정해 주세요.
+      </div>
+    {% endif %}
   </div>
 </div>
 

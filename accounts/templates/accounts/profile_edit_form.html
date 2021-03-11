@@ -1,0 +1,12 @@
+{% extends 'accounts/layout.html' %}
+
+{% block content %}
+    <!-- _form.html에 공동 form 처리 및 인자 넘기기-->
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            {% include "_form.html" with submit_label="프로필 수정" form_title="프로필 수정" %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
